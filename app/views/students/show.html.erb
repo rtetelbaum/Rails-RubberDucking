@@ -3,7 +3,11 @@
 <h2>Student Ducks:</h2>
 
 <ul>
-	<% @student.ducks.each do |duck| %>
-		<li><%= duck.name %></li>
+	<% unless @student.ducks.empty? %>
+		<% @student.ducks.each do |duck| %>
+			<li><%= duck.name %></li>
+		<% end %>
+	<% else %>
+		<li>This student has no ducks!</li>
 	<% end %>
 </ul>
